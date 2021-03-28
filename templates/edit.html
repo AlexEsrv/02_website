@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block current_subject %}
+<section class="current-subject">
+    <div class="theme-subject">
+        Admin
+    </div>
+</section>
+{% endblock %}
+
+{% block contents %}
+
+<div class="edit_form">
+    <form action="{{url_for('edit', a_id=a_id)}}" method="POST">
+        {{edit_form.csrf_token}}
+
+        <div class="form-input">
+            {{edit_form.title.label}}
+            {{edit_form.title}}
+        </div>
+
+        <div class="form-input">
+            {{edit_form.subject.label}}
+            {{edit_form.subject}}
+        </div>
+
+        <div class="form-input">
+            {{edit_form.preview.label}}
+            {{edit_form.preview}}
+        </div>
+
+        <div class="form-input">
+            {{edit_form.contents.label}}
+            {{edit_form.contents(rows=10)}}
+        </div>
+
+        <div class="form-input">
+            {{edit_form.is_featured.label}}
+            {{edit_form.is_featured}}
+        </div>
+
+        <div class="form-input">
+            {{edit_form.submit}}
+        </div>
+
+    </form>
+</div>
+
+{% endblock %}

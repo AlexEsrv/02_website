@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block current_subject %}
+<section class="current-subject">
+    <div class="theme-subject">
+        Admin
+    </div>
+</section>
+{% endblock %}
+
+{% block contents %}
+
+<section class="admin-main">
+    <div class="admin-articles">
+
+        <div class="add-new-links">
+        <a href="{{url_for('edit')}}">Add article</a>
+        <a href="{{url_for('add_subject')}}">Add subject</a>
+        <a class="logout-link" href="{{url_for('logout')}}">Logout</a>
+        </div>
+        {% for article in articles %}
+
+        <div class="article">
+            <h2>{{article.title}} <a href="{{url_for('edit', a_id=article.id)}}">Edit</a></h2>
+            <h3>Featured: {{article.is_featured}}</h3>
+            <p>{{article.preview}}</p>
+        </div>
+
+        {% endfor %}
+
+    </div>
+</section>
+
+{% endblock %}

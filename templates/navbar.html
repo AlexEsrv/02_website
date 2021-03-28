@@ -1,0 +1,16 @@
+<nav id="navbar">
+    <div class="logo">
+        <a href="{{ url_for('home')}}"><span>A</span>DEV</a>
+    </div>
+
+    <div class="company-name">
+        <div>ALEX DEVELOPMENT</div>
+    </div>
+
+    <ul>
+        <li class="{{nav_class['home']}}"><a href="{{ url_for('home')}}">Home</a></li>
+        <li class="{{nav_class['about']}}"><a href="{{ url_for('about') }}">About</a></li>
+<!--        <li class="{{nav_class['contact']}}"><a href="#">Contact</a></li>-->
+        <li class="{{nav_class['admin']}}"><a href="{{url_for('admin')}}">Admin</a></li>
+    </ul>
+</nav>

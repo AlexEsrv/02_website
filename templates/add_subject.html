@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block current_subject %}
+<section class="current-subject">
+    <div class="theme-subject">
+        Admin
+    </div>
+</section>
+{% endblock %}
+
+{% block contents %}
+<div class="subject_form">
+<form action="{{url_for('add_subject')}}" method="POST">
+    {{subject_form.csrf_token}}
+    <div class="form-input">
+    {{subject_form.name.label}}
+    {{subject_form.name}}
+    {{subject_form.submit}}
+    </div>
+</form></div>
+{% endblock %}

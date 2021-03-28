@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% block current_subject %}
+<section class="current-subject">
+    <div class="theme-subject">
+        {{ current_subject_name}}
+    </div>
+</section>
+{% endblock %}
+
+{% block contents %}
+
+
+<section class="main">
+    <div class="subjects">
+        <ul>
+            <li><a href="{{url_for('home')}}">Show all</a></li>
+            {% for subject in subjects %}
+                <li><a href="{{url_for('home', s_id=subject.id)}}">{{ subject.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="articles">
+        {% for article in articles %}
+        <div class="article"><h1><a href="{{url_for('article', a_id=article.id)}}">{{article.title}}</a></h1>
+            <p>{{article.preview}}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+
+<div class="featured-articles">
+    {% for f_article in featured_articles %}
+    <div class="f-article">
+        <h3><a href="{{url_for('article', a_id=f_article.id)}}">{{f_article.title}}</a></h3>
+        <p>{{f_article.preview}}</p>
+    </div>
+    {% endfor %}
+</div>
+</section>
+
+{% endblock %}

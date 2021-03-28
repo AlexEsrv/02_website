@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block current_subject %}
+<section class="current-subject">
+    <div class="theme-subject">
+        Admin
+    </div>
+</section>
+{% endblock %}
+
+{% block contents %}
+
+<div class="login_form">
+<form action="{{url_for('login')}}" method="POST">
+    {{login_form.csrf_token}}
+    <div class="form-input">
+    {{login_form.login.label}}
+    {{login_form.login}}
+    {{login_form.password.label}}
+    {{login_form.password}}
+    {{login_form.submit}}
+    </div>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block current_subject %}
+<section class="current-subject">
+    <div class="theme-subject">
+        {{ article.title}}
+    </div>
+</section>
+{% endblock %}
+
+{% block contents %}
+
+<div class="article">
+    <p>{{ article.contents}}</p>
+</div>
+
+{% endblock %}
