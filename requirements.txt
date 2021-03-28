@@ -6,3 +6,4 @@ WTForms~=2.3.3
 python-dotenv
 Flask-WTF
 Flask-Login
+psycopg2-binary ~= 2.8.6
