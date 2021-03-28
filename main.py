@@ -15,7 +15,8 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
 # DB CONNECTION
-engine = create_engine('sqlite:///data.db')
+# engine = create_engine('sqlite:///data.db')
+engine = create_engine(os.environ.get('DATABASE_URL'))
 db_schema.BaseORM.metadata.create_all(engine)
 db_session = scoped_session(sessionmaker(bind=engine))
 
