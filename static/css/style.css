@@ -30,7 +30,6 @@ body{
     display: grid;
     grid-template-columns: 1fr 5fr 2fr;
     background-color: #53354a;
-
 }
 
 #navbar .logo{
@@ -73,6 +72,18 @@ body{
 #navbar ul li a{
     padding: 1rem;
     background: none;
+}
+
+@media(max-width: 768px) {
+    #navbar .company-name{
+        display: none;
+    }
+
+    #navbar ul .li-admin{
+        display: none;
+    }
+
+
 }
 
 /* CURRENT THEME */
@@ -149,6 +160,31 @@ body{
 .featured-articles .f-article p{
     padding-top: 1rem;
     line-height: 1.4;
+}
+
+@media(max-width: 768px) {
+    .featured-articles{
+        display: none;
+    }
+
+    .main {
+        grid-template-columns: 1fr 5fr;
+    }
+}
+
+@media(max-width: 500px) {
+    .subjects{
+        display: none;
+    }
+
+    .main{
+        grid-template-columns: auto;
+    }
+
+    .current-subject{
+        display: none;
+    }
+
 }
 
 /* ADMIN */

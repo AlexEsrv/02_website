@@ -31,14 +31,14 @@
     </div>
 
 
-<div class="featured-articles">
-    {% for f_article in featured_articles %}
-    <div class="f-article">
-        <h3><a href="{{url_for('article', a_id=f_article.id)}}">{{f_article.title}}</a></h3>
-        <p>{{f_article.preview}}</p>
+    <div class="featured-articles">
+        {% for f_article in featured_articles %}
+        <div class="f-article">
+            <h3><a href="{{url_for('article', a_id=f_article.id)}}">{{f_article.title}}</a></h3>
+            <p>{{f_article.preview}}</p>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
 </section>
 
 {% endblock %}
